@@ -1,101 +1,91 @@
-import Image from "next/image";
+'use client';
+import { Feature } from './component/Feature';
+import { FaCode, FaUser, FaSync } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/nextjs-github-pages/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col items-center">
+      <section className="min-h-screen w-full flex items-center justify-center container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <div className="w-full lg:w-[475px] space-y-[5px] text-left flex flex-col justify-center min-h-screen lg:min-h-0 py-16 lg:py-0">
+            <h1 className="font-bold text-gray-50 text-4xl md:text-5xl">
+              Time to Transform
+            </h1>
+            <h1 
+              className="font-bold text-gray-50 text-4xl md:text-5xl"
+            >
+              <span className="text-blue-500">Your</span> Experience.
+            </h1>
+            <p 
+              className="text-ellipsis mt-[20px] text-lg text-slate-300"
+            >
+              The next generation of scripting, so you can achieve your max potential in Hypixel Skyblock.
+            </p>
+            <div 
+              className="flex justify-start gap-4 mt-8"
+            >
+              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg cursor-pointer transition-colors duration-300">
+                Download
+              </button>
+              <button className="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-lg cursor-pointer transition-colors duration-300">
+                Coming Soon..
+              </button>
+            </div>
+          </div>
+          <div className="h-48 w-px bg-gray-700 hidden lg:block" />
+          <div 
+            className="hidden lg:block w-full lg:w-[560px] mt-8 lg:mt-0"
           >
-            <Image
-              className="dark:invert"
-              src="/nextjs-github-pages/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="aspect-video">
+              <iframe 
+                src="https://www.youtube.com/embed/o8p1G-yWxGw"
+                className="w-full h-full rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section className="min-h-screen w-full flex items-center justify-center container mx-auto px-4 py-16 mt-4 lg:mt-0">
+        <div className="flex flex-col w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center text-center mb-12"
+          >
+            <h1 className="font-bold text-gray-50 text-4xl">What Makes Us</h1>
+            <h1 className="font-bold text-blue-500 text-4xl">Unique?</h1>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4"
+          >
+            <Feature
+              title="Frequent Updates"
+              description="Uses the latest Minecraft version and the Fabric API"
+              icon={FaCode}
+            />
+            <Feature
+              title="User Friendly"
+              description="Easy to use interface for both beginners"
+              icon={FaUser}
+            />
+            <Feature
+              title="No Bullshit"
+              description="Everything is open source, free, and built from the ground up"
+              icon={FaSync}
+            />
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
