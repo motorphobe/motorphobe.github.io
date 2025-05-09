@@ -10,6 +10,7 @@ const exo = Exo_2({
 export const metadata: Metadata = {
   title: "Reverb",
   description: "The next generation of Hypixel SkyBlock scripting.",
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({
