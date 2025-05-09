@@ -8,7 +8,7 @@ const exo = Exo_2({
 });
 
 export const metadata: Metadata = {
-  title: "Cobalt",
+  title: "Reverb",
   description: "The next generation of Hypixel SkyBlock scripting.",
 };
 
