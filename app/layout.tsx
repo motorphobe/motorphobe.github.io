@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
@@ -10,7 +10,10 @@ const exo = Exo_2({
 export const metadata: Metadata = {
   title: "Reverb",
   description: "The next generation of Hypixel SkyBlock scripting.",
-  themeColor: "#FFFFFF",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2196F3",
 };
 
 export default function RootLayout({
