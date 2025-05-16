@@ -15,13 +15,6 @@ export const Navbar = () => {
             >
               <FaGithub size={24} />
             </Link>
-            <Link
-              href="https://discord.gg/7vtWfKeRjm"
-              target="_blank"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              <FaDiscord size={24} />
-            </Link>
           </div>
         </div>
       </div>
