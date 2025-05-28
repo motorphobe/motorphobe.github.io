@@ -75,7 +75,8 @@ export default function Home() {
 
 	return (
 		<>
-			<title>Reverb | Home</title>
+        	<link rel="icon" href="/reverb.ico" />
+			<title>Reverb</title>
 			<Nav />
 			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24">
 				<main className="flex w-full max-w-5xl flex-1 flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-6">

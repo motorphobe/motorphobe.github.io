@@ -66,6 +66,8 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col min-h-screen">
+        	<link rel="icon" href="/favicon.ico" />
+			<title>QuiteBoring</title>
 			<main className="flex flex-col w-full gap-0">
 				<section className="min-h-screen flex items-center justify-center px-8">
 					<div className="flex flex-col gap-6 text-center max-w-2xl">
