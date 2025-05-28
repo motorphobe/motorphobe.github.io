@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { FiGithub } from "react-icons/fi";
 
 interface RepositoryProps {
   name: string;

@@ -1,6 +1,5 @@
 "use client";
 
-import { FiGithub } from "react-icons/fi";
 import { useEffect, useState, useRef } from "react";
 import Repository from "./components/Repository";
 
@@ -71,7 +70,7 @@ export default function Home() {
 				<section className="min-h-screen flex items-center justify-center px-8">
 					<div className="flex flex-col gap-6 text-center max-w-2xl">
 						<h1 className="text-4xl font-bold sm:text-3xl lg:text-4xl">
-							Hey, I'm{" "}
+							Hey, I&apos;m{" "}
 							<span className="bg-gradient-to-r from-[#3D90D7] to-[#7AC6D2] bg-clip-text text-transparent">
 								Nathan
 							</span>
