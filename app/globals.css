@@ -1,19 +1,83 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #121316;
+  --foreground: #ededed;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle 120vh at 25% -20px, rgba(90, 26, 229, 0.15), rgba(90, 26, 229, 0.15), transparent), radial-gradient(circle 150vh at 70% 80%, rgba(26, 80, 229, 0.15), transparent), var(--background);
+  font-family: var(--font-inter);
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0f172a, #020617);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.font-exo2 {
+  font-family: var(--font-exo2);
+}
+
+.font-heading {
+  font-family: var(--font-poppins);
+}
+
+::selection {
+  background: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121316;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27282b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #343539;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27282b #121316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .section-fade {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  }
+
+  .animate-fade-show {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

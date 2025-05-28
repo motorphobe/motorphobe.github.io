@@ -1,101 +1,114 @@
-import Image from "next/image";
+"use client";
+
+import { FiGithub } from "react-icons/fi";
+import { useEffect, useState, useRef } from "react";
+import Repository from "./components/Repository";
+
+interface Repository {
+	name: string;
+	description: string;
+	html_url: string;
+	stargazers_count: number;
+	forks_count: number;
+	language: string;
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/nextjs-github-pages/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+	const [repos, setRepos] = useState<Repository[]>([]);
+	const [loading, setLoading] = useState(true);
+	const sectionRef = useRef<HTMLDivElement>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/nextjs-github-pages/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/nextjs-github-pages/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	useEffect(() => {
+		const fetchRepos = async () => {
+			try {
+				const response = await fetch(
+					"https://api.github.com/users/motorphobe/repos",
+					{
+						headers: {
+							Accept: "application/vnd.github.v3+json",
+						},
+					}
+				);
+				if (!response.ok) throw new Error("Failed to fetch");
+				const data = await response.json();
+				setRepos(
+					data.sort(
+						(a: Repository, b: Repository) =>
+							b.stargazers_count - a.stargazers_count
+					)
+				);
+			} catch (error) {
+				console.error("Error fetching repos:", error);
+			} finally {
+				setLoading(false);
+			}
+		};
+		fetchRepos();
+	}, []);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("animate-fade-show");
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
+
+	return (
+		<div className="flex flex-col min-h-screen">
+			<main className="flex flex-col w-full gap-0">
+				<section className="min-h-screen flex items-center justify-center px-8">
+					<div className="flex flex-col gap-6 text-center max-w-2xl">
+						<h1 className="text-4xl font-bold sm:text-3xl lg:text-4xl">
+							Hey, I'm{" "}
+							<span className="bg-gradient-to-r from-[#3D90D7] to-[#7AC6D2] bg-clip-text text-transparent">
+								Nathan
+							</span>
+							{" "}👋
+						</h1>
+						<p className="text-base text-zinc-400">
+							A 16 year old passionate developer.
+						</p>
+					</div>
+				</section>
+
+				<section className="min-h-screen flex flex-col items-center justify-center px-8 mb-3" ref={sectionRef}>
+					<div className="w-full max-w-5xl">
+						<div className="text-center mb-12">
+							<span className="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#7AC6D2]/20 text-[0.92rem] border-[#3D90D7]/60 flex text-white bg-black/20 backdrop-blur-md w-max mx-auto">
+								Projects
+							</span>
+							<h2 className="text-3xl font-bold mt-6">My Work</h2>
+						</div>
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{loading ? (
+								<div className="text-zinc-400 text-center">
+									Loading repositories...
+								</div>
+							) : repos.length > 0 ? (
+								repos.map((repo, index) => (
+									<Repository key={repo.name} {...repo} index={index} />
+								))
+							) : (
+								<div className="text-zinc-400 text-center">
+									No repositories found
+								</div>
+							)}
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	);
 }
