@@ -79,6 +79,8 @@ export default function Home() {
 			<meta property="og:title" content="Reverb - Hypixel SkyBlock Scripts" />
 			<meta property="og:description" content="Simple and effective." />
 			<meta property="og:image" content="https://quiteboring.dev/reverb-banner.png" />
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:image" content="https://quiteboring.dev/reverb-banner.png">
 			<meta name="theme-color" content="#3D90D7" />
   	<link rel="icon" href="/reverb.ico" />
 			
