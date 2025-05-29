@@ -81,7 +81,7 @@ export default function Home() {
 			<meta property="og:image" content="https://quiteboring.dev/reverb-banner.png" />
 			<meta name="twitter:card" content="summary_large_image">
 			<meta name="twitter:image" content="https://quiteboring.dev/reverb-banner.png">
-			<meta name="theme-color" content="#3D90D7" />
+			<meta name="theme-color" content="#151C62" />
   	<link rel="icon" href="/reverb.ico" />
 			
 			<Nav />
