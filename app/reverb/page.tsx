@@ -75,8 +75,13 @@ export default function Home() {
 
 	return (
 		<>
-        	<link rel="icon" href="/reverb.ico" />
 			<title>Reverb</title>
+			<meta property="og:title" content="Reverb - Hypixel SkyBlock Scripts" />
+			<meta property="og:description" content="Simple and effective." />
+			<meta property="og:image" content="https://quiteboring.dev/reverb-banner.png" />
+			<meta name="theme-color" content="#3D90D7" />
+  	<link rel="icon" href="/reverb.ico" />
+			
 			<Nav />
 			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24 bg-gradient-to-b from-[#00264D] to-[#000B18]">
 				<main className="flex w-full max-w-5xl flex-1 flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-6">
