@@ -81,10 +81,10 @@ export default function Home() {
 			<meta property="og:image" content="https://quiteboring.dev/reverb-banner.png" />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:image" content="https://quiteboring.dev/reverb-banner.png" />
-   <link rel="icon" href="/reverb.ico" />
+   			<link rel="icon" href="/reverb.ico" />
 			
 			<Nav />
-			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24 bg-gradient-to-b from-[#00264D] to-[#000B18]">
+			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24 bg-gradient-to-b from-[#000B18] to-[#0E0E10]">
 				<main className="flex w-full max-w-5xl flex-1 flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-6">
 					<div className="flex max-w-2xl flex-col gap-5">
 						<h1 className="text-4xl tracking-tight font-[700] sm:text-5xl lg:text-6xl">
@@ -136,8 +136,8 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
+				<Footer />
 			</div>
-			<Footer />
 		</>
 	);
 }

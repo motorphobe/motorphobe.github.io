@@ -18,7 +18,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-black/20 backdrop-blur-lg border-b border-zinc-800">
+    <nav className="fixed top-0 z-50 w-full bg-[#0e0e10]/20 backdrop-blur-lg border-b border-zinc-800">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-blue-50 font-bold font-exo2 tracking-[0.1em]">
