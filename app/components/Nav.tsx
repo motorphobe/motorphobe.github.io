@@ -22,7 +22,7 @@ export default function Nav() {
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-blue-50 font-bold font-exo2 tracking-[0.1em]">
-            R E V E R B
+            C O B A L T
           </Link>
           <div className="flex gap-6">
             <a onClick={(e) => handleScroll(e, 'home')} href="#home" className="text-zinc-400 hover:text-[#3E90D6] transition-colors font-[525] cursor-pointer">

@@ -75,17 +75,16 @@ export default function Home() {
 
 	return (
 		<>
-			<title>Reverb</title>
-			<meta property="og:title" content="Reverb - Hypixel SkyBlock Scripts" />
+			<title>Cobalt</title>
+			<meta property="og:title" content="Cobalt - Hypixel SkyBlock Scripts" />
 			<meta property="og:description" content="Simple and effective." />
-			<meta property="og:image" content="https://quiteboring.dev/reverb-banner.png" />
+			<meta property="og:image" content="https://quiteboring.dev/cobalt-banner.png" />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:image" content="https://quiteboring.dev/reverb-banner.png" />
-   			<link rel="icon" href="/reverb.ico" />
+			<meta name="twitter:image" content="https://quiteboring.dev/cobalt-banner.png" />
 			
 			<Nav />
 			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24 bg-gradient-to-b from-[#000B18] to-[#0E0E10]">
-				<main className="flex w-full max-w-5xl flex-1 flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-6">
+				<main className="flex w-full max-w-5xl flex-1 flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-6 min-h-[calc(100vh-200px)]">
 					<div className="flex max-w-2xl flex-col gap-5">
 						<h1 className="text-4xl tracking-tight font-[700] sm:text-5xl lg:text-6xl">
 							Simple and <br />
@@ -118,7 +117,7 @@ export default function Home() {
 						/>
 					</div>
 				</main>
-				<section id="features" className="w-full max-w-7xl mx-auto px-8 py-32">
+				<section id="features" className="w-full max-w-7xl mx-auto px-8 py-32 mt-20">
 					<div ref={featuresRef} className="section-fade">
 						<div className="text-center mb-16">
 							<span className="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#7AC6D2]/20 text-[0.92rem] border-[#3D90D7]/60 flex text-white bg-black/20 backdrop-blur-md w-max mx-auto">
