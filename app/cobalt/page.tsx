@@ -78,9 +78,9 @@ export default function Home() {
 			<title>Cobalt</title>
 			<meta property="og:title" content="Cobalt - Hypixel SkyBlock Scripts" />
 			<meta property="og:description" content="Simple and effective." />
-			<meta property="og:image" content="https://quiteboring.dev/cobalt-banner.png" />
+			<meta property="og:image" content="https://quiteboring.dev/cobalt-banner.jpg" />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:image" content="https://quiteboring.dev/cobalt-banner.png" />
+			<meta name="twitter:image" content="https://quiteboring.dev/cobalt-banner.jpg" />
 			
 			<Nav />
 			<div id="home" className="flex min-h-screen flex-col items-center px-8 sm:px-4 lg:px-12 pt-30 sm:pt-20 lg:pt-24 bg-gradient-to-b from-[#000B18] to-[#0E0E10]">
